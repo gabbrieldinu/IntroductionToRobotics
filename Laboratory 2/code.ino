@@ -112,7 +112,7 @@ void state2()
   digitalWrite(pedestrianRedPin, HIGH);
   digitalWrite(pedestrianGreenPin, LOW);
 
-  digitalWrite(carsGreenPin, HIGH);
+  digitalWrite(carsGreenPin, LOW);
   digitalWrite(carsRedPin, LOW);
   digitalWrite(carsYellowPin, HIGH);
 }
