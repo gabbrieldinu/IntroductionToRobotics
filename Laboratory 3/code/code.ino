@@ -4,6 +4,9 @@ const int pinSW = 2; // digital pin connected to switch output
 const int pinX = A0; // A0 - analog pin connected to X output
 const int pinY = A1; // A1 - analog pin connected to Y output
 
+// serial port
+const int serialPort = 9600;
+
 // declare all the segments pins
 const int pinA = 4;
 const int pinB = 5;
@@ -54,6 +57,8 @@ int maxThreshold = 600;
 // timers
 unsigned long lastActionTime = 0;
 unsigned long startTimer = -1;
+const unsigned long blinkInterval = 1000;
+const unsigned long resetInterval = 5000;
 
 
 // class for a segment that contains the pin number, neighbors, 
@@ -131,7 +136,7 @@ void setup() {
   }
   pinMode(pinSW, INPUT_PULLUP);
   
-  Serial.begin(9600);
+  Serial.begin(serialPort);
 }
 
 // check for x axis movement
@@ -228,7 +233,7 @@ void loop() {
       {
         if (startTimer != -1)
         {
-          if (millis()-startTimer>5000)
+          if (millis() - startTimer > resetInterval)
           {   
             for (int i = 0; i < segSize-1;i++)
             {
@@ -298,7 +303,7 @@ void loop() {
       
     
     // blink the led every given seconds
-    if (millis() - lastActionTime > 1000)
+    if (millis() - lastActionTime > blinkInterval)
     {
       segments[currentSegPosition].blinkSegment();
       lastActionTime = millis();
@@ -310,12 +315,12 @@ void loop() {
   else
   {
     // if in state 2 write the current state instead of blink state
-    digitalWrite(currentSegment.pinNumber,currentSegment.state);
+    digitalWrite(currentSegment.pinNumber, currentSegment.state);
     if (joyMovedOnX == true)
       segments[currentSegPosition].changeSegmentState();
   
   }
   
-	lastSwState = swState;
+lastSwState = swState;
 }
        
