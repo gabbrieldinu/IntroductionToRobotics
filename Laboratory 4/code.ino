@@ -16,7 +16,7 @@ const int pinY = A1; // joy y axis
 
 const byte regSize = 8; // 8 bits to shift
 
-int state = 2;
+int state = 1;
 
 // joy variables
 int minThreshold = 300;
