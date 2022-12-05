@@ -54,5 +54,5 @@ This repository is dedicated to materials and homeworks regarding an introductor
      - First one: Cycle through the DPs using the X axis. Pressing the joystick button will lock the current DP and enable the second state.
      - Second one: Cycle through 0-f using the Y axis. Pressing the joystick button will lock the current digit and return to the first state.
      
-    The solution along with a picture of the boards and a video showcasing the functionality are situated in the Laboratory 2 branch ( here is also a link to the video https://www.youtube.com/shorts/YqDgysah26s ).
+   The solution along with a picture of the boards and a video showcasing the functionality are situated in the Laboratory 2 branch ( here is also a link to the video https://www.youtube.com/shorts/YqDgysah26s ).
     
